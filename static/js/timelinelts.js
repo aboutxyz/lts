@@ -64,7 +64,8 @@ option = {
         },
         legend: {
             x: 'right',
-            data: ['GDP', '金融'],
+            data: ['CKA','NEAX','PAN NKT1','SITC NJ1','SITC NA1', 'EASNSP','SCT', 'CTI', 'NT1', 'CHS','CPS', 'CPF'],
+			// print [i.encode("utf-8") for i in collection.distinct("航线")]
         },
         calculable : true,
         grid: {
@@ -100,8 +101,18 @@ option = {
             }
         ],
         series: [
-            {name: 'GDP', type: 'bar'},
-            {name: '金融', type: 'bar'},
+			{name: 'CKA', type: 'bar'},
+			{name: 'NEAX', type: 'bar'},
+            {name: 'EASNSP', type: 'bar'},
+			{name: 'SITC NJ1', type: 'bar'},
+			{name: 'PAN NKT1', type: 'bar'},
+            {name: 'SITC NA1', type: 'bar'},
+			{name: 'SCT', type: 'bar'},		
+			{name: 'CTI', type: 'bar'},
+			{name: 'NT1', type: 'bar'},
+			{name: 'CHS', type: 'bar'},	
+			{name: 'CPS', type: 'bar'},	
+			{name: 'CPF', type: 'bar'},
         ]
     },
     options: [
