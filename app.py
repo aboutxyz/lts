@@ -16,7 +16,7 @@ pipeline = [{"$group": {"_id" :{"client" : "$订舱人名称", "voyage":"$航线
 @app.route('/')
 def index():
     # return str(list(collection.aggregate(pipeline))[0]['_id'])
-    return render_template('index.html')
+    return render_template('mainhtml.html')
 
 if __name__ == '__main__':
     app.run()
