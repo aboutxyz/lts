@@ -5,32 +5,26 @@ option = null;
 function dataFormatter(obj) {
     var pList = ['北京','天津'];
     var temp;
-    for (var month = 1; month <= 1; month++) {
-        var max = 0;
-        var sum = 0;
-        temp = obj[month];
-        for (var i = 0, l = temp.length; i < l; i++) {
-            max = Math.max(max, temp[i]);
-            sum += temp[i];
-            obj[month][i] = {
+	for (var month = 1; month <= 1; month++) {
+		temp = obj[month];
+		for (var i = 0, l = temp.length; i < l; i++) {
+			obj[month][i] = {
                 name : pList[i],
                 value : temp[i]
-            }
-        }
-        obj[month + 'max'] = Math.floor(max / 100) * 100;
-        obj[month + 'sum'] = sum;
-    }
+			}
+		}
     return obj;
+	}
 }
 
-dataMap.dataGDP = dataFormatter({
+dataMap.dataCKA = dataFormatter({
     //max : 60000,
-    1:[35,87]
+    1:[35,69]
 });
 
-dataMap.dataFinancial = dataFormatter({
+dataMap.dataCAT = dataFormatter({
     //max : 4000,
-    1:[23,89]
+    1:[96,85]
 });
 
 
@@ -64,7 +58,7 @@ option = {
         },
         legend: {
             x: 'right',
-            data: ['CKA','NEAX','PAN NKT1','SITC NJ1','SITC NA1', 'EASNSP','SCT', 'CTI', 'NT1', 'CHS','CPS', 'CPF'],
+            data: ['CKA','CAT','NEAX','PAN NKT1','SITC NJ1','SITC NA1', 'EASNSP','SCT', 'CTI', 'NT1', 'CHS','CPS', 'CPF'],
 			// print [i.encode("utf-8") for i in collection.distinct("航线")]
         },
         calculable : true,
@@ -102,6 +96,7 @@ option = {
         ],
         series: [
 			{name: 'CKA', type: 'bar'},
+			{name: 'CAT', type: 'bar'},
 			{name: 'NEAX', type: 'bar'},
             {name: 'EASNSP', type: 'bar'},
 			{name: 'SITC NJ1', type: 'bar'},
@@ -119,8 +114,8 @@ option = {
         {
             title: {text: '2016年1月份出货量'},
             series: [
-                {data: dataMap.dataGDP['1']},
-                {data: dataMap.dataFinancial['1']},
+                {data: dataMap.dataCKA['1']},
+                {data: dataMap.dataCAT['1']},
             ]
         },
     ]

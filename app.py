@@ -25,4 +25,6 @@ if __name__ == '__main__':
         
 # db.data.aggregate([ { $group: {"_id": { "client" : "$订舱人名称", "voyage":"$航线"} , "number":{$sum:"$TEU"}} } ,{$sort:{"_id.voyage":1, number:-1}}]); 
 
+#db.data.aggregate([ {$match:{"航线":"CKA"}},{ $group: {"_id": { "client" : "$订舱人名称"} , "number":{$sum:"$TEU"}} } ,{$sort:{"_id.voyage":1, number:-1}}]);
+
 
